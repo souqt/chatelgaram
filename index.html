@@ -27,4 +27,31 @@
 <meta name="description" content="شاشات سحر الغرام |دردشة سحر الغرام |دردشة عربية شات عربي,شات عربي,دردشتي, شاتي,شات اجمل صدفة,دردشه اجمل صدفة,شات اميرة الجنس,دردشه اميرة الجنس,شات عرباوي,شات عربي,شات اهل العرب">
 <meta name="keywords" content="شاتشات سحر الغرام |دردشة سحر الغرام |دردشة عربية ,شاتي,شات عربي,شات عربي,دردشتي, شاتي,شات اجمل صدفة,دردشه اجمل صدفة,شات اميرة الجنس,دردشه اميرة الجنس,شات عرباوي,شات عربي,شات اهل العرب">
   <iframe allow='camera;gyroscope;accelerometer;magnetometer;xr-spatial-          tracking;microphone;' src='https://chatelgaram.com/' style='     position: fixed;     top: 0px;     bottom: 0px;     right: 0px;     width: 100%;     border: none;     margin: 0;     padding: 0;     overflow: hidden;     z-index: 999999;     height: 100%;   '>
+       <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const iframe = document.getElementById("myIframe");
+
+            iframe.onload = function () {
+                const iframeWindow = iframe.contentWindow;
+
+                // التخزين المؤقت
+                if (window.localStorage) {
+                    // مثال: تخزين بعض البيانات في localStorage
+                    iframeWindow.localStorage.setItem('key', 'value');
+                }
+
+                // تحسين الأداء
+                iframeWindow.addEventListener('scroll', function () {
+                    // تنفيذ بعض الأكواد لتحسين الأداء أثناء التمرير
+                });
+
+                // تحميل الكسول
+                const lazyLoadImages = iframeWindow.document.querySelectorAll('img.lazyload');
+                lazyLoadImages.forEach(img => {
+                    img.src = img.dataset.src;
+                });
+            };
+        });
+    </script>
+ 
 </html>
