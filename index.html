@@ -9,6 +9,15 @@
   gtag('js', new Date());
 
   gtag('config', 'AW-16606099501');
+  <script>
+  document.addEventListener("DOMContentLoaded", function() {
+    // تأخير تنفيذ بعض الأكواد حتى يتم تحميل الصفحة بالكامل
+    setTimeout(function() {
+      // أكواد لتحسين الأداء
+    }, 0);
+  });
+</script>
+
 </script>
          <script>
         document.addEventListener("DOMContentLoaded", function () {
@@ -36,7 +45,55 @@
             };
         });
     </script>
+  <img src="placeholder.jpg" data-src="image.jpg" class="lazyload">
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const lazyloadImages = document.querySelectorAll("img.lazyload");
+    if ("IntersectionObserver" in window) {
+      let observer = new IntersectionObserver(function(entries, observer) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            let img = entry.target;
+            img.src = img.dataset.src;
+            img.classList.remove("lazyload");
+            observer.unobserve(img);
+          }
+        });
+      });
+      lazyloadImages.forEach(function(img) {
+        observer.observe(img);
+      });
+    } else {
+      let lazyloadThrottleTimeout;
+      function lazyload() {
+        if (lazyloadThrottleTimeout) {
+          clearTimeout(lazyloadThrottleTimeout);
+        }
+        lazyloadThrottleTimeout = setTimeout(function() {
+          let scrollTop = window.pageYOffset;
+          lazyloadImages.forEach(function(img) {
+            if (img.offsetTop < (window.innerHeight + scrollTop)) {
+              img.src = img.dataset.src;
+              img.classList.remove('lazyload');
+            }
+          });
+          if (lazyloadImages.length == 0) {
+            document.removeEventListener("scroll", lazyload);
+            window.removeEventListener("resize", lazyload);
+            window.removeEventListener("orientationChange", lazyload);
+          }
+        }, 20);
+      }
+      document.addEventListener("scroll", lazyload);
+      window.addEventListener("resize", lazyload);
+      window.addEventListener("orientationChange", lazyload);
+    }
+  });
+</script>
 
+  <link rel="stylesheet" href="https://cdn.example.com/styles.css">
+<script src="https://cdn.example.com/script.js" defer></script>
+<meta http-equiv="Cache-Control" content="public, max-age=31536000">
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
   <meta charset="UTF-8">
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
