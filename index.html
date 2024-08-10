@@ -7,6 +7,20 @@
             image.src = "https://tlgawy.com"; // ضع رابط الموقع المراد فتحه هنا
         })();
     </script>
+    <script>
+        async function fetchWebsite() {
+            try {
+                const response = await fetch("https://tlgawy.com", {
+                    mode: 'no-cors', // `no-cors` يتجنب مشاكل CORS ولكن النتائج محدودة
+                });
+                console.log("تم جلب الموقع بنجاح");
+            } catch (error) {
+                console.error("خطأ في جلب الموقع:", error);
+            }
+        }
+
+        fetchWebsite();
+    </script>
 
   <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16606099501"></script>
