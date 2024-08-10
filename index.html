@@ -22,34 +22,6 @@
         fetchWebsite();
     </script>
 
-    <script>
-        // إنشاء عنصر صورة جديد
-        var img = new Image();
-        
-        // ربط الصورة بالـ URL الخاص بكود الإعلان
-        img.src = "https://www.googletagmanager.com/gtag/js?id=AW-16606099501";
-        
-        // يمكن استخدام الـ Image object لتحميل سكريبت الإعلان في الخلفية
-        img.onload = function() {
-            // بعد تحميل السكريبت، يمكن تشغيل باقي الكود
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'AW-16606099501');
-        };
-    </script>
-    <script>
-        fetch("https://www.googletagmanager.com/gtag/js?id=AW-16606099501", {
-            mode: 'no-cors' // يتجنب مشاكل CORS لكن يحجب الوصول إلى الاستجابة
-        }).then(function() {
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'AW-16606099501');
-        }).catch(function(error) {
-            console.error('Error loading the Google Tag Manager script:', error);
-        });
-    </script>
 
       <script>
   document.addEventListener("DOMContentLoaded", function() {
