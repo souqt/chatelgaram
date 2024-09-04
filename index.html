@@ -19,26 +19,49 @@
     <style>
         body {
             font-family: 'Tajawal', sans-serif;
-            background-color: #f8f9fa;
-            text-align: center;
+            background-color: #f1f1f1;
             direction: rtl;
+            text-align: center;
         }
         .chat-container {
-            height: 100vh;
+            padding: 20px;
             display: flex;
+            flex-wrap: wrap;
             justify-content: center;
-            align-items: center;
         }
-        .chat-link {
-            font-size: 24px;
+        .chat-icon {
+            font-size: 48px;
+            margin: 10px;
+            color: #007bff;
+        }
+        .news-ticker {
             background-color: #007bff;
             color: white;
-            padding: 20px;
+            padding: 10px;
+            overflow: hidden;
+            white-space: nowrap;
+            box-sizing: border-box;
+        }
+        .news-ticker span {
+            display: inline-block;
+            padding-left: 100%;
+            animation: ticker 20s linear infinite;
+        }
+        @keyframes ticker {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+        .entry-button {
+            font-size: 24px;
+            background-color: #006400;
+            color: white;
+            padding: 15px 30px;
             border-radius: 8px;
             text-decoration: none;
+            transition: background-color 0.3s ease;
         }
-        .chat-link:hover {
-            background-color: #0056b3;
+        .entry-button:hover {
+            background-color: #004d00;
         }
         .seo-text {
             display: none;
@@ -48,18 +71,33 @@
 </head>
 <body>
 
+<div class="news-ticker">
+    <span>شات الحياة، شات الورد، شات الصداقة، شات القلوب، شات الحب، شات الفرح، شات السعادة، شات الراحة، شات الروح...</span>
+</div>
+
 <div class="chat-container">
-    <a href="https://garam.tlgawy.com/" class="chat-link">الدخول إلى الدردشة</a>
+    <i class="chat-icon bi bi-chat-fill"></i>
+    <i class="chat-icon bi bi-chat-dots-fill"></i>
+    <i class="chat-icon bi bi-chat-heart-fill"></i>
+    <i class="chat-icon bi bi-chat-square-fill"></i>
+    <i class="chat-icon bi bi-chat-right-dots-fill"></i>
+    <i class="chat-icon bi bi-chat-left-text-fill"></i>
+    <!-- أضف المزيد من الأيقونات هنا -->
+</div>
+
+<div>
+    <a href="https://your-chat-link.com" class="entry-button">الدخول إلى الدردشة</a>
 </div>
 
 <!-- كلمات البحث للسيو -->
 <div class="seo-text">
     <p>
-        دردشة، شات، محادثة، دردشة عربية، دردشة مباشرة، شات عربي، شات جماعي، محادثة صوتية، محادثة فيديو، دردشة فيديو، شات كتابي، دردشة سريعة، دردشة فورية، شات مباشر، دردشة بدون تسجيل، شات بدون تسجيل، دردشة مجانية، دردشة عشوائية، دردشة خاصة، دردشة عامة، دردشة مغلقة، دردشة مفتوحة، دردشة خاصة مجانية، دردشة للتواصل الاجتماعي، شات للتعارف، شات للصداقات، دردشة للمرح، شات للترفيه، دردشة آمنة، شات آمن...
+        شات الحياة، شات الورد، شات الصداقة، شات القلوب، شات الحب، شات الفرح، شات السعادة، شات الراحة، شات الروح، شات الزهور، شات الليل، شات النهار، شات الشمس، شات القمر، شات النجوم، شات الغيوم، شات المطر، شات الهواء، شات النسيم، شات الهدوء...
         <!-- أضف المزيد من الكلمات هنا لتصل إلى مئة ألف -->
     </p>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.js"></script>
 </body>
 </html>
