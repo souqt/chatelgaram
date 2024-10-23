@@ -1,6 +1,10 @@
 <html>
   <head>
+    
     <script>
+      // ضبط مدة الـCookie ليتم حذفه بعد فترة محددة
+document.cookie = "passedSecurity=true; max-age=3600; path=/"; // يبقى لمدة ساعة
+
       // إنشاء Cookie أو إضافة Query Parameter
       document.cookie = "passedSecurity=true; path=/";
       // إعادة توجيه إلى الموقع الأصلي بعد 5 ثوانٍ
