@@ -6,9 +6,10 @@
     <title>صفحة الحماية</title>
     <script>
         window.onload = function() {
-            // تعيين الـCookie
-            document.cookie = "passedSecurity=true; Max-Age=3600; Path=/"; // تعيين الـCookie لمدة ساعة
-            
+            // تعيين الـCookie إذا لم يكن موجودًا
+            if (document.cookie.indexOf('passedSecurity=true') === -1) {
+                document.cookie = "passedSecurity=true; Max-Age=3600; Path=/"; // تعيين الـCookie لمدة ساعة
+            }
             // إعادة التوجيه إلى الموقع الأصلي
             window.location.href = "https://cam.smasm.com"; // استبدل هذا برابط الموقع الأصلي الخاص بك
         };
