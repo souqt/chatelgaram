@@ -1,22 +1,22 @@
-<html>
-  <head>
-        <script>
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صفحة الحماية</title>
+</head>
+<body>
+    <script>
         // تعيين الـCookie فقط إذا لم يكن موجودًا
         if (document.cookie.indexOf('passedSecurity=true') === -1) {
             document.cookie = "passedSecurity=true; Max-Age=3600; Path=/"; // تعيين الـCookie لمدة ساعة
             
             // إعادة التوجيه إلى الموقع الأصلي بعد تعيين الـCookie
-            window.location.href = "https://cam.smasm.com"; // استبدل هذا برابط الموقع الأصلي الخاص بك
+            window.location.href = "https://cam.smasm.com/"; // استبدل هذا برابط الموقع الأصلي الخاص بك
         } else {
             // إذا كان الـCookie موجودًا، اترك المستخدم هنا بدون إعادة توجيه
             document.write("أنت هنا بفضل صفحة الحماية.");
         }
     </script>
-
-    <title>جاري التحقق من الأمان...</title>
-  </head>
-  <body>
-    <h2>جاري التحقق من الأمان...</h2>
-    <p>ستتم إعادة توجيهك تلقائيًا خلال لحظات.</p>
-  </body>
+</body>
 </html>
