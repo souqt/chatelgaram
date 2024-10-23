@@ -4,17 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>صفحة الحماية</title>
-</head>
-<body>
     <script>
         // تعيين الـCookie فقط إذا لم يكن موجودًا
-        if (document.cookie.indexOf('passedSecurity=true') === -1) {
+        function setCookie() {
             document.cookie = "passedSecurity=true; Max-Age=3600; Path=/"; // تعيين الـCookie لمدة ساعة
-            
-      setTimeout(function() {
-        window.location.href = "https://cam.smasm.com";
-      }, 1000);
+        }
+
+        // إعادة التوجيه
+        function redirect() {
+            window.location.href = "https://cam.smasm.com/"; // استبدل هذا برابط الموقع الأصلي الخاص بك
+        }
+
+        // التحقق من وجود الـCookie وإجراء إعادة التوجيه
+        window.onload = function() {
+            if (document.cookie.indexOf('passedSecurity=true') === -1) {
+                setCookie(); // تعيين الـCookie
+                redirect(); // إعادة التوجيه إلى الموقع الأصلي
+            } else {
+                document.write("أنت هنا بفضل صفحة الحماية.");
+            }
+        };
     </script>
-    </script>
+</head>
+<body>
 </body>
 </html>
