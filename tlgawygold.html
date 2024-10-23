@@ -1,17 +1,18 @@
 <html>
   <head>
-    
-    <script>
-document.cookie = "passedSecurity=true; Max-Age=3600; Path=/"; // تعيين الـCookie لمدة ساعة
-window.location.href = "https://cam.smasm.com/"; // إعادة التوجيه إلى الموقع الأصلي بعد تعيين الـCookie
-
-      // إنشاء Cookie أو إضافة Query Parameter
-      document.cookie = "passedSecurity=true; path=/";
-      // إعادة توجيه إلى الموقع الأصلي بعد 5 ثوانٍ
-      setTimeout(function() {
-        window.location.href = "https://cam.smasm.com/";
-      }, 1000);
+        <script>
+        // تعيين الـCookie فقط إذا لم يكن موجودًا
+        if (document.cookie.indexOf('passedSecurity=true') === -1) {
+            document.cookie = "passedSecurity=true; Max-Age=3600; Path=/"; // تعيين الـCookie لمدة ساعة
+            
+            // إعادة التوجيه إلى الموقع الأصلي بعد تعيين الـCookie
+            window.location.href = "https://cam.smasm.com"; // استبدل هذا برابط الموقع الأصلي الخاص بك
+        } else {
+            // إذا كان الـCookie موجودًا، اترك المستخدم هنا بدون إعادة توجيه
+            document.write("أنت هنا بفضل صفحة الحماية.");
+        }
     </script>
+
     <title>جاري التحقق من الأمان...</title>
   </head>
   <body>
