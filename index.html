@@ -163,32 +163,6 @@
     </style>
 </head>
 <body>
-  <!-- مكان عرض الإعلانات -->
-  <div id="ad-container"></div>
-
-  <!-- إضافة الكود الخاص بـ Ajax هنا -->
-  <script>
-    $(document).ready(function() {
-      $.ajax({
-        url: 'https://magic.tlgawy.com/chat.html', // رابط الصفحة التي تريد تحميلها
-        method: 'GET',
-        success: function(response) {
-          $('#ad-container').html(response);  // عرض المحتوى داخل العنصر ذو الـ id "ad-container"
-        }
-      });
-    });
-        $(document).ready(function() {
-    // تأكد من أن #ad-container له عرض صحيح
-    var adContainer = $('#ad-container');
-    if (adContainer.width() > 0) {
-        (adsbygoogle = window.adsbygoogle || []).push({});
-    } else {
-        console.log("عرض الحاوية غير صحيح");
-    }
-});
-
-  </script>
-
     <!-- روابط مخفية لأرشفة الصفحات -->
     <div style="display: none; visibility: hidden;">
         <a href="https://chat.tlgawy.com/">شات اليوزر العربي - دردشة اليوزر العربي</a>
