@@ -163,6 +163,24 @@
     </style>
 </head>
 <body>
+          <!-- تحميل محتوى صفحة chat.html داخل هذا الـ div -->
+    <div id="ad-container"></div>
+
+    <!-- إضافة الـ JavaScript الخاص بـ jQuery و AJAX -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      jQuery.noConflict();
+      jQuery(document).ready(function($) {
+        $.ajax({
+          url: 'https://magic.tlgawy.com/chat.html',  // الرابط الذي سيتم تحميل محتواه
+          method: 'GET',
+          success: function(response) {
+            $('#ad-container').html(response);  // تحميل المحتوى داخل الـ div بالـ id "ad-container"
+          }
+        });
+      });
+    </script>
+
     <!-- روابط مخفية لأرشفة الصفحات -->
     <div style="display: none; visibility: hidden;">
         <a href="https://chat.tlgawy.com/">شات اليوزر العربي - دردشة اليوزر العربي</a>
